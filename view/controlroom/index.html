@@ -1,0 +1,113 @@
+ <!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name=viewport content="width=device-width, initial-scale=1" />
+<meta name="keywords" content="oddbrain, BrokenBookshelf, 本棚, 蔵書管理">
+<title>Control Room | BrokenBookshelf</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="../style.css">
+<script type="text/javascript" src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+<script>
+(function (window, document) {
+var menu = document.getElementById('menu'),
+    WINDOW_CHANGE_EVENT = ('onorientationchange' in window) ? 'orientationchange':'resize';
+
+function toggleHorizontal() {
+    [].forEach.call(
+        document.getElementById('menu').querySelectorAll('.custom-can-transform'),
+        function(el){
+            el.classList.toggle('pure-menu-horizontal');
+        }
+    );
+};
+
+function toggleMenu() {
+    // set timeout so that the panel has a chance to roll up
+    // before the menu switches states
+    if (menu.classList.contains('open')) {
+        setTimeout(toggleHorizontal, 500);
+    }
+    else {
+        toggleHorizontal();
+    }
+    menu.classList.toggle('open');
+    document.getElementById('toggle').classList.toggle('x');
+};
+
+function closeMenu() {
+    if (menu.classList.contains('open')) {
+        toggleMenu();
+    }
+}
+
+document.getElementById('toggle').addEventListener('click', function (e) {
+    toggleMenu();
+});
+
+window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
+})(this, this.document);
+
+</script>
+</head>
+<body>
+<div id="wrap">
+	<div class="custom-wrapper pure-g" id="menu">
+		<div class="pure-u-1 pure-u-md-1-3">
+			<div class="pure-menu">
+				<a href="#" class="pure-menu-heading custom-brand">BrokenBookshelf</a>
+				<a href="#" class="custom-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
+			</div>
+		</div>
+		<div class="pure-u-1 pure-u-md-1-3">
+			<div class="pure-menu pure-menu-horizontal custom-can-transform">
+				<ul class="pure-menu-list">
+					<li class="pure-menu-item"><a href="#" class="pure-menu-link">Home</a></li>
+					<li class="pure-menu-item"><a href="#" class="pure-menu-link">About</a></li>
+					<li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="pure-u-1 pure-u-md-1-3">
+			<div class="pure-menu pure-menu-horizontal custom-menu-3 custom-can-transform">
+				<ul class="pure-menu-list">
+					<li class="pure-menu-item"><a href="#" class="pure-menu-link">Yahoo</a></li>
+					<li class="pure-menu-item"><a href="#" class="pure-menu-link">W3C</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="b-box b-box-ctrl">
+		<h1 class="b-font-i-2 b-font-ls-1">BROKENBOOKSHELF CONTROL ROOM</h1>
+		<hr />
+		<div class="pure-g">
+			<div class="pure-u-1-2 b-box-p-h-1">
+				<a class="pure-button" href="#">
+					<i class="fa fa-calendar" aria-hidden="true"></i>
+					Checked Out List
+				</a>
+				<a class="pure-button" href="#">
+					<i class="fa fa-user" aria-hidden="true"></i>
+					Registered User List
+				</a>
+				<a class="pure-button" href="#">
+					<i class="fa fa-book" aria-hidden="true"></i>
+					Shelved Books List
+				</a>
+				<a class="pure-button" href="#">
+					<i class="fa fa-fire" aria-hidden="true"></i>
+					Banned Books List
+				</a>
+			</div>
+			<div class="pure-u-1-2">
+				<h2>Server Status</h2>
+				<p class="status">Status：<span class="status color-success">RUNNING</span> / <span class="status color-state">DELAYED</span> / <span class="status color-price">STOP</span></p>
+				<p class="status">Server Running Time : <span>103:03:24</span></p>
+				<p class="status">Current Server Time : <span>2016-07-24 03:10:59</span></p>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

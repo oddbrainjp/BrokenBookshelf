@@ -134,6 +134,9 @@ html,body {
 .b-font-ls-1{
 	letter-spacing: initial;
 }
+.b-font-align-right{
+	text-align:right;
+}
 .b-h-mid{
 	margin:0 auto;
 }

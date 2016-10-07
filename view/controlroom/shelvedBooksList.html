@@ -1,0 +1,659 @@
+ <!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name=viewport content="width=device-width, initial-scale=1" />
+<meta name="keywords" content="oddbrain, BrokenBookshelf, 本棚, 蔵書管理">
+<title>Shelved Books List | BrokenBookshelf</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="../style.css">
+<script type="text/javascript" src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+<script>
+(function (window, document) {
+var menu = document.getElementById('menu'),
+    WINDOW_CHANGE_EVENT = ('onorientationchange' in window) ? 'orientationchange':'resize';
+
+function toggleHorizontal() {
+    [].forEach.call(
+        document.getElementById('menu').querySelectorAll('.custom-can-transform'),
+        function(el){
+            el.classList.toggle('pure-menu-horizontal');
+        }
+    );
+};
+
+function toggleMenu() {
+    // set timeout so that the panel has a chance to roll up
+    // before the menu switches states
+    if (menu.classList.contains('open')) {
+        setTimeout(toggleHorizontal, 500);
+    }
+    else {
+        toggleHorizontal();
+    }
+    menu.classList.toggle('open');
+    document.getElementById('toggle').classList.toggle('x');
+};
+
+function closeMenu() {
+    if (menu.classList.contains('open')) {
+        toggleMenu();
+    }
+}
+
+document.getElementById('toggle').addEventListener('click', function (e) {
+    toggleMenu();
+});
+
+window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
+})(this, this.document);
+
+</script>
+</head>
+<body>
+<div id="wrap">
+	<div class="custom-wrapper pure-g" id="menu">
+		<div class="pure-u-1 pure-u-md-1-3">
+			<div class="pure-menu">
+				<a href="#" class="pure-menu-heading custom-brand">BrokenBookshelf</a>
+				<a href="#" class="custom-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
+			</div>
+		</div>
+		<div class="pure-u-1 pure-u-md-1-3">
+			<div class="pure-menu pure-menu-horizontal custom-can-transform">
+				<ul class="pure-menu-list">
+					<li class="pure-menu-item"><a href="#" class="pure-menu-link">Home</a></li>
+					<li class="pure-menu-item"><a href="#" class="pure-menu-link">About</a></li>
+					<li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="pure-u-1 pure-u-md-1-3">
+			<div class="pure-menu pure-menu-horizontal custom-menu-3 custom-can-transform">
+				<ul class="pure-menu-list">
+					<li class="pure-menu-item"><a href="#" class="pure-menu-link">Yahoo</a></li>
+					<li class="pure-menu-item"><a href="#" class="pure-menu-link">W3C</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="b-box b-box-ctrl">
+		<h1 class="b-font-i-2 b-font-ls-1">SHELVED BOOKS LIST</h1>
+		<hr />
+		<div class="pure-g">
+			<div class="pure-u-1 b-box-p-h-1">
+			#将来的にはソート機能を実装する
+			#ユーザ名をクリックすると、IDなどの情報を見れたり、Ban出来るようにする
+				<table class="pure-table">
+					<thead>
+						<tr>
+							<th>#<button class="pure-button">↕</button></th>
+							<th>Delete<button class="pure-button">↕</button></th>
+							<th>Created<button class="pure-button">↕</button></th>
+							<th>Modified<button class="pure-button">↕</button></th>
+							<th>Star<button class="pure-button">↕</button></th>
+							<th>Publisher<button class="pure-button">↕</button></th>
+							<th>Actor<button class="pure-button">↕</button></th>
+							<th>Artist<button class="pure-button">↕</button></th>
+							<th>Aspectratio<button class="pure-button">↕</button></th>
+							<th>Audiencerating<button class="pure-button">↕</button></th>
+							<th>Audioformat<button class="pure-button">↕</button></th>
+							<th>Author<button class="pure-button">↕</button></th>
+							<th>Binding<button class="pure-button">↕</button></th>
+							<th>Brand<button class="pure-button">↕</button></th>
+							<th>Category<button class="pure-button">↕</button></th>
+							<th>Ceroagerating<button class="pure-button">↕</button></th>
+							<th>EAN<button class="pure-button">↕</button></th>
+							<th>Edition<button class="pure-button">↕</button></th>
+							<th>Eanlist_eanlistelement<button class="pure-button">↕</button></th>
+							<th>Eanlist<button class="pure-button">↕</button></th>
+							<th>EISBN<button class="pure-button">↕</button></th>
+							<th>Director<button class="pure-button">↕</button></th>
+							<th>Color<button class="pure-button">↕</button></th>
+							<th>Department<button class="pure-button">↕</button></th>
+							<th>Clothingsize<button class="pure-button">↕</button></th>
+							<th>Creator<button class="pure-button">↕</button></th>
+							<th>Creator_role<button class="pure-button">↕</button></th>
+							<th>mpn<button class="pure-button">↕</button></th>
+							<th>Numberofdiscs<button class="pure-button">↕</button></th>
+							<th>Numberofissues<button class="pure-button">↕</button></th>
+							<th>Numberofitems<button class="pure-button">↕</button></th>
+							<th>Publicationdate<button class="pure-button">↕</button></th>
+							<th>Numberoftracks<button class="pure-button">↕</button></th>
+							<th>Operatingsystem<button class="pure-button">↕</button></th>
+							<th>Packagequantity<button class="pure-button">↕</button></th>
+							<th>Partnumber<button class="pure-button">↕</button></th>
+							<th>Platform<button class="pure-button">↕</button></th>
+							<th>Productgroup<button class="pure-button">↕</button></th>
+							<th>Producttypesubcategory<button class="pure-button">↕</button></th>
+							<th>NumberofPages<button class="pure-button">↕</button></th>
+							<th>Runningtime<button class="pure-button">↕</button></th>
+							<th>Regioncode<button class="pure-button">↕</button></th>
+							<th>Releasedate<button class="pure-button">↕</button></th>
+							<th>Seikodoproductcode<button class="pure-button">↕</button></th>
+							<th>Size<button class="pure-button">↕</button></th>
+							<th>SKU<button class="pure-button">↕</button></th>
+							<th>Studio<button class="pure-button">↕</button></th>
+							<th>Subscriptionlength<button class="pure-button">↕</button></th>
+							<th>Title<button class="pure-button">↕</button></th>
+							<th>Tradeinvalue<button class="pure-button">↕</button></th>
+							<th>UPC<button class="pure-button">↕</button></th>
+							<th>UPClist<button class="pure-button">↕</button></th>
+							<th>UPClist_upclistelement<button class="pure-button">↕</button></th>
+							<th>Warranty<button class="pure-button">↕</button></th>
+							<th>Mediatype<button class="pure-button">↕</button></th>
+							<th>Model<button class="pure-button">↕</button></th>
+							<th>Itemdimensions_length<button class="pure-button">↕</button></th>
+							<th>Manufacturerpertswarrantydescription<button class="pure-button">↕</button></th>
+							<th>Itemdimensions<button class="pure-button">↕</button></th>
+							<th>Episodesequence<button class="pure-button">↕</button></th>
+							<th>Esrbagerating<button class="pure-button">↕</button></th>
+							<th>Feature<button class="pure-button">↕</button></th>
+							<th>Format<button class="pure-button">↕</button></th>
+							<th>Genre<button class="pure-button">↕</button></th>
+							<th>Hardwareplatform<button class="pure-button">↕</button></th>
+							<th>Hazardousmaterialtype<button class="pure-button">↕</button></th>
+							<th>Isadaltproduct<button class="pure-button">↕</button></th>
+							<th>Isautograaphed<button class="pure-button">↕</button></th>
+							<th>ISBN<button class="pure-button">↕</button></th>
+							<th>Iseligiblefortradein<button class="pure-button">↕</button></th>
+							<th>Ismemorabilia<button class="pure-button">↕</button></th>
+							<th>Issuesperyear<button class="pure-button">↕</button></th>
+							<th>Itemdimensions_height<button class="pure-button">↕</button></th>
+							<th>Manufacturerminimumage<button class="pure-button">↕</button></th>
+							<th>Itemdimensions_weight<button class="pure-button">↕</button></th>
+							<th>Itemdimensions_width<button class="pure-button">↕</button></th>
+							<th>Itempartnumber<button class="pure-button">↕</button></th>
+							<th>Label<button class="pure-button">↕</button></th>
+							<th>Languages<button class="pure-button">↕</button></th>
+							<th>Languages_language<button class="pure-button">↕</button></th>
+							<th>Languages_language_name<button class="pure-button">↕</button></th>
+							<th>Languages_language_type<button class="pure-button">↕</button></th>
+							<th>Languages_language_audio<button class="pure-button">↕</button></th>
+							<th>Legaldisclaimer<button class="pure-button">↕</button></th>
+							<th>Listprice<button class="pure-button">↕</button></th>
+							<th>Manufacturer<button class="pure-button">↕</button></th>
+							<th>Manufacturermaximumage<button class="pure-button">↕</button></th>
+							<th>Weeetaxvalue<button class="pure-button">↕</button></th>
+						</tr>
+					</thead>
+				
+					<tbody>
+						<tr class="pure-table-odd">
+							<td>1</td>
+							<td>Delete</td>
+							<td>Created</td>
+							<td>Modified</td>
+							<td>Star</td>
+							<td>Publisher</td>
+							<td>Actor</td>
+							<td>Artist</td>
+							<td>Aspectratio</td>
+							<td>Audiencerating</td>
+							<td>Audioformat</td>
+							<td>Author</td>
+							<td>Binding</td>
+							<td>Brand</td>
+							<td>Category</td>
+							<td>Ceroagerating</td>
+							<td>EAN</td>
+							<td>Edition</td>
+							<td>Eanlist_eanlistelement</td>
+							<td>Eanlist</td>
+							<td>EISBN</td>
+							<td>Director</td>
+							<td>Color</td>
+							<td>Department</td>
+							<td>Clothingsize</td>
+							<td>Creator</td>
+							<td>Creator_role</td>
+							<td>mpn</td>
+							<td>Numberofdiscs</td>
+							<td>Numberofissues</td>
+							<td>Numberofitems</td>
+							<td>Publicationdate</td>
+							<td>Numberoftracks</td>
+							<td>Operatingsystem</td>
+							<td>Packagequantity</td>
+							<td>Partnumber</td>
+							<td>Platform</td>
+							<td>Productgroup</td>
+							<td>Producttypesubcategory</td>
+							<td>NumberofPages</td>
+							<td>Runningtime</td>
+							<td>Regioncode</td>
+							<td>Releasedate</td>
+							<td>Seikodoproductcode</td>
+							<td>Size</td>
+							<td>SKU</td>
+							<td>Studio</td>
+							<td>Subscriptionlength</td>
+							<td>Title</td>
+							<td>Tradeinvalue</td>
+							<td>UPC</td>
+							<td>UPClist</td>
+							<td>UPClist_upclistelement</td>
+							<td>Warranty</td>
+							<td>Mediatype</td>
+							<td>Model</td>
+							<td>Itemdimensions_length</td>
+							<td>Manufacturerpertswarrantydescription</td>
+							<td>Itemdimensions</td>
+							<td>Episodesequence</td>
+							<td>Esrbagerating</td>
+							<td>Feature</td>
+							<td>Format</td>
+							<td>Genre</td>
+							<td>Hardwareplatform</td>
+							<td>Hazardousmaterialtype</td>
+							<td>Isadaltproduct</td>
+							<td>Isautograaphed</td>
+							<td>ISBN</td>
+							<td>Iseligiblefortradein</td>
+							<td>Ismemorabilia</td>
+							<td>Issuesperyear</td>
+							<td>Itemdimensions_height</td>
+							<td>Manufacturerminimumage</td>
+							<td>Itemdimensions_weight</td>
+							<td>Itemdimensions_width</td>
+							<td>Itempartnumber</td>
+							<td>Label</td>
+							<td>Languages</td>
+							<td>Languages_language</td>
+							<td>Languages_language_name</td>
+							<td>Languages_language_type</td>
+							<td>Languages_language_audio</td>
+							<td>Legaldisclaimer</td>
+							<td>Listprice</td>
+							<td>Manufacturer</td>
+							<td>Manufacturermaximumage</td>
+							<td>Weeetaxvalue</td>
+						</tr>
+
+						<tr class="">
+							<td>2</td>
+							<td>Delete</td>
+							<td>Created</td>
+							<td>Modified</td>
+							<td>Star</td>
+							<td>Publisher</td>
+							<td>Actor</td>
+							<td>Artist</td>
+							<td>Aspectratio</td>
+							<td>Audiencerating</td>
+							<td>Audioformat</td>
+							<td>Author</td>
+							<td>Binding</td>
+							<td>Brand</td>
+							<td>Category</td>
+							<td>Ceroagerating</td>
+							<td>EAN</td>
+							<td>Edition</td>
+							<td>Eanlist_eanlistelement</td>
+							<td>Eanlist</td>
+							<td>EISBN</td>
+							<td>Director</td>
+							<td>Color</td>
+							<td>Department</td>
+							<td>Clothingsize</td>
+							<td>Creator</td>
+							<td>Creator_role</td>
+							<td>mpn</td>
+							<td>Numberofdiscs</td>
+							<td>Numberofissues</td>
+							<td>Numberofitems</td>
+							<td>Publicationdate</td>
+							<td>Numberoftracks</td>
+							<td>Operatingsystem</td>
+							<td>Packagequantity</td>
+							<td>Partnumber</td>
+							<td>Platform</td>
+							<td>Productgroup</td>
+							<td>Producttypesubcategory</td>
+							<td>NumberofPages</td>
+							<td>Runningtime</td>
+							<td>Regioncode</td>
+							<td>Releasedate</td>
+							<td>Seikodoproductcode</td>
+							<td>Size</td>
+							<td>SKU</td>
+							<td>Studio</td>
+							<td>Subscriptionlength</td>
+							<td>Title</td>
+							<td>Tradeinvalue</td>
+							<td>UPC</td>
+							<td>UPClist</td>
+							<td>UPClist_upclistelement</td>
+							<td>Warranty</td>
+							<td>Mediatype</td>
+							<td>Model</td>
+							<td>Itemdimensions_length</td>
+							<td>Manufacturerpertswarrantydescription</td>
+							<td>Itemdimensions</td>
+							<td>Episodesequence</td>
+							<td>Esrbagerating</td>
+							<td>Feature</td>
+							<td>Format</td>
+							<td>Genre</td>
+							<td>Hardwareplatform</td>
+							<td>Hazardousmaterialtype</td>
+							<td>Isadaltproduct</td>
+							<td>Isautograaphed</td>
+							<td>ISBN</td>
+							<td>Iseligiblefortradein</td>
+							<td>Ismemorabilia</td>
+							<td>Issuesperyear</td>
+							<td>Itemdimensions_height</td>
+							<td>Manufacturerminimumage</td>
+							<td>Itemdimensions_weight</td>
+							<td>Itemdimensions_width</td>
+							<td>Itempartnumber</td>
+							<td>Label</td>
+							<td>Languages</td>
+							<td>Languages_language</td>
+							<td>Languages_language_name</td>
+							<td>Languages_language_type</td>
+							<td>Languages_language_audio</td>
+							<td>Legaldisclaimer</td>
+							<td>Listprice</td>
+							<td>Manufacturer</td>
+							<td>Manufacturermaximumage</td>
+							<td>Weeetaxvalue</td>
+						</tr>
+
+						<tr class="pure-table-odd">
+							<td>3</td>
+							<td>Delete</td>
+							<td>Created</td>
+							<td>Modified</td>
+							<td>Star</td>
+							<td>Publisher</td>
+							<td>Actor</td>
+							<td>Artist</td>
+							<td>Aspectratio</td>
+							<td>Audiencerating</td>
+							<td>Audioformat</td>
+							<td>Author</td>
+							<td>Binding</td>
+							<td>Brand</td>
+							<td>Category</td>
+							<td>Ceroagerating</td>
+							<td>EAN</td>
+							<td>Edition</td>
+							<td>Eanlist_eanlistelement</td>
+							<td>Eanlist</td>
+							<td>EISBN</td>
+							<td>Director</td>
+							<td>Color</td>
+							<td>Department</td>
+							<td>Clothingsize</td>
+							<td>Creator</td>
+							<td>Creator_role</td>
+							<td>mpn</td>
+							<td>Numberofdiscs</td>
+							<td>Numberofissues</td>
+							<td>Numberofitems</td>
+							<td>Publicationdate</td>
+							<td>Numberoftracks</td>
+							<td>Operatingsystem</td>
+							<td>Packagequantity</td>
+							<td>Partnumber</td>
+							<td>Platform</td>
+							<td>Productgroup</td>
+							<td>Producttypesubcategory</td>
+							<td>NumberofPages</td>
+							<td>Runningtime</td>
+							<td>Regioncode</td>
+							<td>Releasedate</td>
+							<td>Seikodoproductcode</td>
+							<td>Size</td>
+							<td>SKU</td>
+							<td>Studio</td>
+							<td>Subscriptionlength</td>
+							<td>Title</td>
+							<td>Tradeinvalue</td>
+							<td>UPC</td>
+							<td>UPClist</td>
+							<td>UPClist_upclistelement</td>
+							<td>Warranty</td>
+							<td>Mediatype</td>
+							<td>Model</td>
+							<td>Itemdimensions_length</td>
+							<td>Manufacturerpertswarrantydescription</td>
+							<td>Itemdimensions</td>
+							<td>Episodesequence</td>
+							<td>Esrbagerating</td>
+							<td>Feature</td>
+							<td>Format</td>
+							<td>Genre</td>
+							<td>Hardwareplatform</td>
+							<td>Hazardousmaterialtype</td>
+							<td>Isadaltproduct</td>
+							<td>Isautograaphed</td>
+							<td>ISBN</td>
+							<td>Iseligiblefortradein</td>
+							<td>Ismemorabilia</td>
+							<td>Issuesperyear</td>
+							<td>Itemdimensions_height</td>
+							<td>Manufacturerminimumage</td>
+							<td>Itemdimensions_weight</td>
+							<td>Itemdimensions_width</td>
+							<td>Itempartnumber</td>
+							<td>Label</td>
+							<td>Languages</td>
+							<td>Languages_language</td>
+							<td>Languages_language_name</td>
+							<td>Languages_language_type</td>
+							<td>Languages_language_audio</td>
+							<td>Legaldisclaimer</td>
+							<td>Listprice</td>
+							<td>Manufacturer</td>
+							<td>Manufacturermaximumage</td>
+							<td>Weeetaxvalue</td>
+						</tr>
+
+						<tr class="">
+							<td>4</td>
+							<td>Delete</td>
+							<td>Created</td>
+							<td>Modified</td>
+							<td>Star</td>
+							<td>Publisher</td>
+							<td>Actor</td>
+							<td>Artist</td>
+							<td>Aspectratio</td>
+							<td>Audiencerating</td>
+							<td>Audioformat</td>
+							<td>Author</td>
+							<td>Binding</td>
+							<td>Brand</td>
+							<td>Category</td>
+							<td>Ceroagerating</td>
+							<td>EAN</td>
+							<td>Edition</td>
+							<td>Eanlist_eanlistelement</td>
+							<td>Eanlist</td>
+							<td>EISBN</td>
+							<td>Director</td>
+							<td>Color</td>
+							<td>Department</td>
+							<td>Clothingsize</td>
+							<td>Creator</td>
+							<td>Creator_role</td>
+							<td>mpn</td>
+							<td>Numberofdiscs</td>
+							<td>Numberofissues</td>
+							<td>Numberofitems</td>
+							<td>Publicationdate</td>
+							<td>Numberoftracks</td>
+							<td>Operatingsystem</td>
+							<td>Packagequantity</td>
+							<td>Partnumber</td>
+							<td>Platform</td>
+							<td>Productgroup</td>
+							<td>Producttypesubcategory</td>
+							<td>NumberofPages</td>
+							<td>Runningtime</td>
+							<td>Regioncode</td>
+							<td>Releasedate</td>
+							<td>Seikodoproductcode</td>
+							<td>Size</td>
+							<td>SKU</td>
+							<td>Studio</td>
+							<td>Subscriptionlength</td>
+							<td>Title</td>
+							<td>Tradeinvalue</td>
+							<td>UPC</td>
+							<td>UPClist</td>
+							<td>UPClist_upclistelement</td>
+							<td>Warranty</td>
+							<td>Mediatype</td>
+							<td>Model</td>
+							<td>Itemdimensions_length</td>
+							<td>Manufacturerpertswarrantydescription</td>
+							<td>Itemdimensions</td>
+							<td>Episodesequence</td>
+							<td>Esrbagerating</td>
+							<td>Feature</td>
+							<td>Format</td>
+							<td>Genre</td>
+							<td>Hardwareplatform</td>
+							<td>Hazardousmaterialtype</td>
+							<td>Isadaltproduct</td>
+							<td>Isautograaphed</td>
+							<td>ISBN</td>
+							<td>Iseligiblefortradein</td>
+							<td>Ismemorabilia</td>
+							<td>Issuesperyear</td>
+							<td>Itemdimensions_height</td>
+							<td>Manufacturerminimumage</td>
+							<td>Itemdimensions_weight</td>
+							<td>Itemdimensions_width</td>
+							<td>Itempartnumber</td>
+							<td>Label</td>
+							<td>Languages</td>
+							<td>Languages_language</td>
+							<td>Languages_language_name</td>
+							<td>Languages_language_type</td>
+							<td>Languages_language_audio</td>
+							<td>Legaldisclaimer</td>
+							<td>Listprice</td>
+							<td>Manufacturer</td>
+							<td>Manufacturermaximumage</td>
+							<td>Weeetaxvalue</td>
+						</tr>
+
+						<tr class="pure-table-odd">
+							<td>5</td>
+							<td>Delete</td>
+							<td>Created</td>
+							<td>Modified</td>
+							<td>Star</td>
+							<td>Publisher</td>
+							<td>Actor</td>
+							<td>Artist</td>
+							<td>Aspectratio</td>
+							<td>Audiencerating</td>
+							<td>Audioformat</td>
+							<td>Author</td>
+							<td>Binding</td>
+							<td>Brand</td>
+							<td>Category</td>
+							<td>Ceroagerating</td>
+							<td>EAN</td>
+							<td>Edition</td>
+							<td>Eanlist_eanlistelement</td>
+							<td>Eanlist</td>
+							<td>EISBN</td>
+							<td>Director</td>
+							<td>Color</td>
+							<td>Department</td>
+							<td>Clothingsize</td>
+							<td>Creator</td>
+							<td>Creator_role</td>
+							<td>mpn</td>
+							<td>Numberofdiscs</td>
+							<td>Numberofissues</td>
+							<td>Numberofitems</td>
+							<td>Publicationdate</td>
+							<td>Numberoftracks</td>
+							<td>Operatingsystem</td>
+							<td>Packagequantity</td>
+							<td>Partnumber</td>
+							<td>Platform</td>
+							<td>Productgroup</td>
+							<td>Producttypesubcategory</td>
+							<td>NumberofPages</td>
+							<td>Runningtime</td>
+							<td>Regioncode</td>
+							<td>Releasedate</td>
+							<td>Seikodoproductcode</td>
+							<td>Size</td>
+							<td>SKU</td>
+							<td>Studio</td>
+							<td>Subscriptionlength</td>
+							<td>Title</td>
+							<td>Tradeinvalue</td>
+							<td>UPC</td>
+							<td>UPClist</td>
+							<td>UPClist_upclistelement</td>
+							<td>Warranty</td>
+							<td>Mediatype</td>
+							<td>Model</td>
+							<td>Itemdimensions_length</td>
+							<td>Manufacturerpertswarrantydescription</td>
+							<td>Itemdimensions</td>
+							<td>Episodesequence</td>
+							<td>Esrbagerating</td>
+							<td>Feature</td>
+							<td>Format</td>
+							<td>Genre</td>
+							<td>Hardwareplatform</td>
+							<td>Hazardousmaterialtype</td>
+							<td>Isadaltproduct</td>
+							<td>Isautograaphed</td>
+							<td>ISBN</td>
+							<td>Iseligiblefortradein</td>
+							<td>Ismemorabilia</td>
+							<td>Issuesperyear</td>
+							<td>Itemdimensions_height</td>
+							<td>Manufacturerminimumage</td>
+							<td>Itemdimensions_weight</td>
+							<td>Itemdimensions_width</td>
+							<td>Itempartnumber</td>
+							<td>Label</td>
+							<td>Languages</td>
+							<td>Languages_language</td>
+							<td>Languages_language_name</td>
+							<td>Languages_language_type</td>
+							<td>Languages_language_audio</td>
+							<td>Legaldisclaimer</td>
+							<td>Listprice</td>
+							<td>Manufacturer</td>
+							<td>Manufacturermaximumage</td>
+							<td>Weeetaxvalue</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="pure-u-1 b-box-p-h-1 b-box-p-v-1 b-pagenation">
+				<button class="pure-button-1 pure-button-disabled">1</button>
+				<button class="pure-button b-pagenation-1">2</button>
+				<button class="pure-button b-pagenation-1">3</button>
+				<button class="pure-button b-pagenation-1">4</button>
+				<button class="pure-button b-pagenation-1">5</button>
+				<button class="pure-button b-pagenation-end">Least</button>
+			</div>
+		</div>
+	</div>
+	<div class="b-box b-box-ctrl">
+		<div class="pure-g">
+			<div class="pure-u-1 b-font-align-right">
+				Assembled in <a href="https://goo.gl/maps/TfSbv2Kxer32" title="chiba">Chiba</a>. created by <a href="http://oddbrain.jp" title="oddbrain">oddbrain.jp</a>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

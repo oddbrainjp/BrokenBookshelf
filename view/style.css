@@ -123,7 +123,11 @@ html,body {
 	padding-left:1em;
 	box-sizing:border-box;
 }
-
+.b-box-p-v-1{
+	padding-top:1em;
+	padding-bottom:1em;
+	box-sizing:border-box;
+}
 
 .b-font-80{
 	font-size: 80%;
@@ -133,6 +137,9 @@ html,body {
 }
 .b-font-ls-1{
 	letter-spacing: initial;
+}
+.b-font-align-right{
+	text-align:right;
 }
 .b-h-mid{
 	margin:0 auto;

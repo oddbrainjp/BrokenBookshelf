@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name=viewport content="width=device-width, initial-scale=1" />
+<meta name="keywords" content="oddbrain, BrokenBookshelf, 本棚, 蔵書管理">
+<title>Book Details | BrokenBookshelf</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+</head>
+<body>
+<h1>Site Basic Color Sets</h1>
+<hr />
+
+<strong>文字</strong>
+<p style="color:#333;">Base color:#333</p>
+<p style="color:#249b53;">Main color:#249bff  class:.color-main</p>
+<p style="color:#f30046;">Accent color:#f30046 class:.color-accent</p>
+<p style="color:#249bff;text-decoration:underline;">Link color:#249b53;Underline</p>
+<p style="color:#fff;background-color:#013;">Header color:#fff</p>
+
+<br />
+
+<strong>背景</strong>
+<p>枠線はつかない</p>
+<p style="background-color:#fff;border:1px solid #ccc;">Base color:#fff   class:.bgcolor-base</p>
+<p style="background-color:#eee;border:1px solid #ccc;">Main color:#eee   class:.bgcolor-main</p>
+<p style="background-color:#fdd;border:1px solid #ccc;">Accent color:#fdd class:.bgcolor-accent</p>
+<p style="background-color:#013;color:#fff;">Header color:#013</p>
+
+<br />
+
+<strong>枠線</strong>
+<p>ページのデザインに使用する(対ユーザ用)</p>
+<p style="border:1px solid #ccc;">Base color:#ccc class:.border-base</p>
+<p style="border:1px solid #bc9b00;box-shadow:0 0 0 4px #fff5ce inset;">Information color:#bc9b00;shadow:#fff5ce class:.border-info</p>
+<p style="border:1px solid #a03;box-shadow:0 0 0 4px #fde5ec inset;">Notice color:#a03;shadow:#fde5ec class:.border-notice</p>
+
+<br />
+
+<strong>メッセージ</strong>
+<p>システム上のメッセージのみに使用する(対管理者用)</p>
+<style>
+.b-box-message-box{
+	width:100%;
+}
+.b-box{
+	margin:.5em 0;
+	padding:1em;
+	border:4px solid;
+	overflow:hidden;
+}
+._info::before,
+._notice::before,
+._error::before{
+	font-family:FontAwesome;
+	margin-right:1em;
+}
+._info{
+	border-color:#008a00 !important;
+	color:#008a00 !important;
+}
+._info::before{
+	content:"\f05a";
+}
+._notice{
+	border-color:#c45500 !important;
+	color:#c45500 !important;
+}
+._notice::before{
+	content:"\f071";
+}
+._error{
+	border-color:#b12704 !important;
+	color:#b12704 !important;
+}
+._error::before{
+	content:"\f057";
+}
+</style>
+
+<div class="b-box-message-box">
+	<div class="b-box _info">SampleText</div>
+	<div class="b-box _notice">SampleText</div>
+	<div class="b-box _error">SampleText</div>
+</div>
+
+</body>
+</html>

@@ -5,51 +5,11 @@
 <meta name=viewport content="width=device-width, initial-scale=1" />
 <meta name="keywords" content="oddbrain, BrokenBookshelf, 本棚, 蔵書管理">
 <title>Book Details | BrokenBookshelf</title>
-<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+<link rel="stylesheet" href="//yui.yahooapis.com/pure/0.6.0/pure-min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="system-style.css">
 <link rel="stylesheet" href="style.css">
 <script type="text/javascript" src="//code.jquery.com/jquery-2.2.1.min.js"></script>
-<script>
-(function (window, document) {
-var menu = document.getElementById('menu'),
-    WINDOW_CHANGE_EVENT = ('onorientationchange' in window) ? 'orientationchange':'resize';
-
-function toggleHorizontal() {
-    [].forEach.call(
-        document.getElementById('menu').querySelectorAll('.custom-can-transform'),
-        function(el){
-            el.classList.toggle('pure-menu-horizontal');
-        }
-    );
-};
-
-function toggleMenu() {
-    // set timeout so that the panel has a chance to roll up
-    // before the menu switches states
-    if (menu.classList.contains('open')) {
-        setTimeout(toggleHorizontal, 500);
-    }
-    else {
-        toggleHorizontal();
-    }
-    menu.classList.toggle('open');
-    document.getElementById('toggle').classList.toggle('x');
-};
-
-function closeMenu() {
-    if (menu.classList.contains('open')) {
-        toggleMenu();
-    }
-}
-
-document.getElementById('toggle').addEventListener('click', function (e) {
-    toggleMenu();
-});
-
-window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
-})(this, this.document);
-
-</script>
 </head>
 <body>
 <div id="wrap">

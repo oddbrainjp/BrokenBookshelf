@@ -5,7 +5,7 @@
 <meta name=viewport content="width=device-width, initial-scale=1" />
 <meta name="keywords" content="oddbrain, BrokenBookshelf, 本棚, 蔵書管理">
 <title>Book Details | BrokenBookshelf</title>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/pure/0.6.0/pure-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 <link rel="stylesheet" href="style.css">
 <script type="text/javascript" src="//code.jquery.com/jquery-2.2.1.min.js"></script>
@@ -79,51 +79,26 @@ window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
 		</div>
 	</div>
 	<div class="pure-g b-top-box">
-		<form class="pure-form pure-form-aligned" method="get" action="#">
+		<h1 class="b-font-i-2 b-font-ls-1">Welcome.</h1>
+		<form class="pure-form pure-form-aligned form-login" method="get" action="#">
 			<fieldset>
-		<div class="pure-u-3-4">
-			<div class="pure-control-group">
-				<label for="name">Keywords:</label>
-				<input id="name" type="text" placeholder="Kaywords">
-			</div>
-	
-			<div class="pure-control-group">
-				<label for="ISBN">ISBN:</label>
-				<input id="ISBN" type="text" placeholder="ISBN">
-			</div>
-	
-			<div class="pure-control-group">
-				<label for="Author">Author:</label>
-				<input id="Author" type="text" placeholder="Author">
-			</div>
-	
-			<div class="pure-control-group">
-				<label for="Publisher">Publisher</label>
-				<input id="Publisher" type="text" placeholder="Publisher">
-			</div>
-	
-			<div class="pure-controls">
-				<label for="cb" class="pure-checkbox">
-					<input id="cb" type="checkbox"> 蔵書になければAmazonを検索<br>
-					<input id="cb" type="checkbox"> 蔵書になければ登録処理を実行
-				</label>
-			</div>
-		</div>
-		<div class="pure-u-1-4">
-			<button class="button-xlarge pure-button button-10 buttom-m-v-05">
-				<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-				登録
-			</button>
-			<button class="button-xlarge pure-button button-10 buttom-m-v-05">
-				<i class="fa fa-cog" aria-hidden="true"></i>
-				利用情報の更新
-			</button>
-			<hr />
-			<button type="submit" class="pure-button pure-button-primary button-xlarge button-10">
-				<i class="fa fa-search" aria-hidden="true"></i>
-				検索
-			</button>
-		</div>
+				<div class="pure-u-1-2">
+					<div class="pure-control-group">
+						<label for="username">Username:</label>
+						<input id="username" type="text" placeholder="Username">
+					</div>
+			
+					<div class="pure-control-group">
+						<label for="mail">MailAddress:</label>
+						<input id="mail" type="email" placeholder="MailAddress">
+					</div>
+				</div>
+				<div class="pure-u-1-2">
+					<button type="submit" class="pure-button pure-button-primary button-xlarge button-10">
+						<i class="fa fa-sign-in" aria-hidden="true"></i>
+						登録
+					</button>
+				</div>
 				</fieldset>
 			</form>
 	</div>

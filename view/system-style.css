@@ -1,0 +1,36 @@
+.b-box-message-box{
+	width:100%;
+}
+.b-box{
+	margin:.5em 0;
+	padding:1em;
+	border:4px solid;
+	overflow:hidden;
+}
+._info::before,
+._notice::before,
+._error::before{
+	font-family:FontAwesome;
+	margin-right:1em;
+}
+._info{
+	border-color:#008a00 !important;
+	color:#008a00 !important;
+}
+._info::before{
+	content:"\f05a";
+}
+._notice{
+	border-color:#c45500 !important;
+	color:#c45500 !important;
+}
+._notice::before{
+	content:"\f071";
+}
+._error{
+	border-color:#b12704 !important;
+	color:#b12704 !important;
+}
+._error::before{
+	content:"\f057";
+}

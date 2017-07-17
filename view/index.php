@@ -5,13 +5,19 @@
 <meta name=viewport content="width=device-width, initial-scale=1" />
 <meta name="keywords" content="oddbrain, BrokenBookshelf, 本棚, 蔵書管理">
 <title>BrokenBookshelf</title>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/pure/0.6.2/pure-min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/pure/0.6.2/pure-min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="system-style.css">
 <script type="text/javascript" src="//code.jquery.com/jquery-2.2.1.min.js"></script>
 </head>
 <body>
+	<?php
+		require_once('../controller/common/userInfo.php');
+		ini_set('display_errors', 'On');
+		session_start();
+		$userInfo = $_SESSION['userInfo'];
+	?>
 <div id="wrap">
 	<div class="custom-wrapper pure-g header" id="menu">
 		<div class="pure-u-1-5 pure-u-md-1-5">
@@ -39,7 +45,7 @@
 			</div>
 		</div>
 		<div class="pure-u-1-5 pure-u-md-1-5">
-			<a href="./mypage.html" class="pure-menu-heading align-center" title="マイページへ">マイページへ移動<br /><strong>印籠会さん</strong></a>
+			<a href="./mypage.html" class="pure-menu-heading align-center" title="マイページへ">マイページへ移動<br /><strong><?php echo $userInfo->getName();?>さん</strong></a>
 		</div>
 	</div>
 	<div class="custom-wrapper pure-g">
